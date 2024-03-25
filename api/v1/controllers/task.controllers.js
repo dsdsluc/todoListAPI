@@ -140,7 +140,7 @@ module.exports.create = async (req, res) => {
     listUser: req.body.listUser,
     content: req.body.content,
     taskParenId: req.body.taskParenId,
-    timeFinsh: req.body.timeFinsh,
+    timeFinish: req.body.timeFinish,
     timeStart: req.body.timeStart || Date.now(),
   };
   const task = new Task(objectTask);

@@ -5,7 +5,7 @@ const TaskSchema = new mongoose.Schema({
     status: String,
     content: String,
     timeStart: Date,
-    timeFinsh: Date,
+    timeFinish: Date,
     createdBy:String,
     listUser: Array,
     taskParenId:String,
