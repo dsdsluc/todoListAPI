@@ -180,3 +180,20 @@ module.exports.detail = async (req, res) => {
 
   }
 };
+
+module.exports.list = async (req, res) => {
+  try {
+    const users = await User.find({
+      deleted: false
+    }).select("fullName id");
+    res.json({
+      code: 200,
+      users: users
+    })
+  } catch (error) {
+    res.json({
+      code: 400,
+      error: error
+    })
+  }
+}
