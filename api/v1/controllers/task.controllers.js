@@ -32,13 +32,13 @@ module.exports.index = async (req, res) => {
   if (sortKey & sortValue) {
     sort[sortKey] = sortValue;
   }
-
+  const itemTotal = await Task.countDocuments(find);
   // Pagination
   let initPagination = {
     currentPage: 1,
-    limitItem: 2,
+    limitItem: itemTotal,
   };
-  const itemTotal = await Task.countDocuments(find);
+  
   objectPagination = paginationHelper(initPagination, req.query, itemTotal);
 
   // Search
